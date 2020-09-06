@@ -1,0 +1,38 @@
+{
+  "name": "alfred-meme",
+  "version": "0.0.0",
+  "description": "Generate memes using Alfred &amp; memegen.link",
+  "license": "MIT",
+  "repository": "dnnsmnstrr/alfred-meme",
+  "author": {
+    "name": "Dennis Muensterer",
+    "email": "dennismuensterer@gmail.com",
+    "url": "muensterer.xyz"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava",
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "files": [
+    "index.js",
+    "icon.png",
+    "info.plist"
+  ],
+  "keywords": [
+    "alfred",
+    "workflow",
+    "alfy"
+  ],
+  "dependencies": {
+    "alfy": "^0.10.0"
+  },
+  "devDependencies": {
+    "alfy-test": "^0.3.0",
+    "ava": "^0.18.0",
+    "xo": "^0.17.0"
+  }
+}
