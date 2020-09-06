@@ -39,19 +39,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>579BB5D7-3E9A-4FB3-B20E-E0D18252DD9C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>AAF59DEA-F2BD-4C9C-B9CC-3CCADB4B5B65</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>8C42AC9C-BFCD-4875-8004-10C30C79D891</key>
 		<array>
 			<dict>
@@ -179,142 +166,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string></string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>_encode() {
-    local _length="${#1}"
-    for (( _offset = 0 ; _offset &lt; _length ; _offset++ )); do
-        _print_offset="${1:_offset:1}"
-        case "${_print_offset}" in
-            [a-zA-Z0-9.~_-]) printf "${_print_offset}" ;;
-            '/') printf '/' ;;
-            ':') printf ':' ;;
-            *) printf '%%%X' "'${_print_offset}" ;;
-        esac
-    done
-}
-
-if [[ ! -d "$HOME/meme" ]]; then
-	mkdir $HOME/meme
-fi
-
-cd $HOME/meme
-
-list_of_urls=$(curl https://memepaste.blob.core.windows.net/meme\?restype\=container\&amp;comp\=list | sed 's/&gt;/\n/g' | grep /Url | cut -d '&lt;' -f 1)
-
-IFS=$'\n'; arr=( $(echo -e "$list_of_urls") );for url in ${arr[@]}; do
-	echo "Downloading from url: $url" 
-    filename=$(echo "$url" | cut -d '/' -f 5)
-    if [ -f "./$filename" ]; then
-        echo "$filename already exists!"
-    else
-        _encode $url | xargs -n 1 curl -o "$filename" 
-    fi
-done</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>AAF59DEA-F2BD-4C9C-B9CC-3CCADB4B5B65</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>memedownload</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Downloads memes from the default source</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>579BB5D7-3E9A-4FB3-B20E-E0D18252DD9C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>/usr/local/bin/impbcopy "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>B5772E68-A37B-42DD-A844-C3B383BCB55F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>v</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>1048576</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>A943BA70-8393-4311-92A4-81752E49DB25</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>anchorfields</key>
 				<true/>
 				<key>argumenttrimmode</key>
@@ -392,6 +243,69 @@ done</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/local/bin/impbcopy "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B5772E68-A37B-42DD-A844-C3B383BCB55F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>v</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>1048576</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>A943BA70-8393-4311-92A4-81752E49DB25</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -413,13 +327,6 @@ done</string>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
-		<key>579BB5D7-3E9A-4FB3-B20E-E0D18252DD9C</key>
-		<dict>
-			<key>xpos</key>
-			<integer>40</integer>
-			<key>ypos</key>
-			<integer>325</integer>
-		</dict>
 		<key>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</key>
 		<dict>
 			<key>xpos</key>
@@ -430,30 +337,23 @@ done</string>
 		<key>8C42AC9C-BFCD-4875-8004-10C30C79D891</key>
 		<dict>
 			<key>xpos</key>
-			<integer>25</integer>
+			<integer>15</integer>
 			<key>ypos</key>
-			<integer>485</integer>
+			<integer>210</integer>
 		</dict>
 		<key>A943BA70-8393-4311-92A4-81752E49DB25</key>
 		<dict>
 			<key>xpos</key>
-			<integer>440</integer>
-			<key>ypos</key>
 			<integer>485</integer>
-		</dict>
-		<key>AAF59DEA-F2BD-4C9C-B9CC-3CCADB4B5B65</key>
-		<dict>
-			<key>xpos</key>
-			<integer>195</integer>
 			<key>ypos</key>
-			<integer>325</integer>
+			<integer>430</integer>
 		</dict>
 		<key>B5772E68-A37B-42DD-A844-C3B383BCB55F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>385</integer>
 			<key>ypos</key>
-			<integer>485</integer>
+			<integer>430</integer>
 		</dict>
 		<key>FB894C5C-26ED-409E-99D7-8FF695AD0EC3</key>
 		<dict>
