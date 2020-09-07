@@ -33,7 +33,7 @@ const getSampleText = (sample) => {
 }
 
 const matchFunction = ({name, key}, input) => {
-  return name.includes(input) || key.includes(input)
+  return key.includes(input) || name.toLowerCase().includes(input)
 }
 const items = alfy
 .matches(input, data, matchFunction)

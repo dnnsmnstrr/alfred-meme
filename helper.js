@@ -37,34 +37,44 @@ const escapeSpecialChars = text => {
 const unformat = text => {
 	let formatted = '';
 	const chars = [...text];
-	chars.forEach(char => {
-		switch (char) {
-			case '_':
-				formatted += ' ';
-				break;
-			case '--':
-				formatted += '-';
-				break;
-			case '__':
-				formatted += '_';
-				break;
-			case '~q':
-				formatted += '?';
-				break;
-			case '~s':
-				formatted += '/';
-				break;
-			case '~p':
-				formatted += '%';
-				break;
-			case '~':
-				formatted += '#';
-				break;
-			case '\'\'':
-				formatted += '"';
-				break;
-			default:
-				formatted += char;
+	chars.forEach((char, index) => {
+		if (chars[index - 1] !== '~') {
+			switch (char) {
+				case '_':
+					formatted += ' ';
+					break;
+				case '-':
+					if (chars[index + 1] === '-') {
+						formatted += '-';
+					}
+					break;
+				case '__':
+					formatted += '_';
+					break;
+				case '~':
+					switch (chars[index + 1]) {
+						case 'q':
+							formatted += '?';
+							break;
+						case 'h':
+							formatted += '#';
+							break;
+						case 'p':
+							formatted += '%';
+							break;
+						case 's':
+							formatted += '/';
+							break;
+						default:
+							formatted += char;
+					}
+					break;
+				case '\'\'':
+					formatted += '"';
+					break;
+				default:
+					formatted += char;
+			}
 		}
 	});
 	return formatted;
