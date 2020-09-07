@@ -1,4 +1,4 @@
-const format = text => {
+const escapeSpecialChars = text => {
 	let formatted = '';
 	const chars = [...text];
 	chars.forEach(char => {
@@ -34,6 +34,20 @@ const format = text => {
 	return formatted;
 };
 
+const urlReducer = (previous, current) => {
+	return previous + '/' + escapeSpecialChars(current);
+};
+
+const formatText = text => {
+	return text.reduce(urlReducer, '');
+};
+
+function splitInput(input = '', splitter = ' ') {
+	return input.split(splitter);
+}
+
 module.exports = {
-	format
+	formatText,
+	escapeSpecialChars,
+	splitInput
 };
