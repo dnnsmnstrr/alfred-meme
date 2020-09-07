@@ -34,6 +34,42 @@ const escapeSpecialChars = text => {
 	return formatted;
 };
 
+const unformat = text => {
+	let formatted = '';
+	const chars = [...text];
+	chars.forEach(char => {
+		switch (char) {
+			case '_':
+				formatted += ' ';
+				break;
+			case '--':
+				formatted += '-';
+				break;
+			case '__':
+				formatted += '_';
+				break;
+			case '~q':
+				formatted += '?';
+				break;
+			case '~s':
+				formatted += '/';
+				break;
+			case '~p':
+				formatted += '%';
+				break;
+			case '~':
+				formatted += '#';
+				break;
+			case '\'\'':
+				formatted += '"';
+				break;
+			default:
+				formatted += char;
+		}
+	});
+	return formatted;
+};
+
 const urlReducer = (previous, current) => {
 	return previous + '/' + escapeSpecialChars(current);
 };
@@ -48,6 +84,7 @@ function splitInput(input = '', splitter = ' ') {
 
 module.exports = {
 	formatText,
+	unformat,
 	escapeSpecialChars,
 	splitInput
 };
