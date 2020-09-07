@@ -15,7 +15,8 @@
   "scripts": {
     "test": "xo && ava",
     "postinstall": "alfy-init",
-    "preuninstall": "alfy-cleanup"
+    "preuninstall": "alfy-cleanup",
+    "local": "yarn install --ignore-scripts"
   },
   "files": [
     "index.js",
