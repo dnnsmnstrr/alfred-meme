@@ -17,7 +17,7 @@ const textReducer = (previous, current, index) => {
 }
 
 const getSubtitle = (title) => {
-  if (!splitText || splitText.length === 0 || (splitText.length < 2 && splitText[0] === '')) return `Add text to generate ${title} meme`
+  if (!splitText || splitText.length === 0 || (splitText.length < 2 && splitText[0] === '')) return `Add text to generate '${title}' meme`
   return splitText.reduce(textReducer, '')
 }
 
@@ -35,9 +35,11 @@ const getSampleText = (sample) => {
 const matchFunction = ({name, key}, input) => {
   return key.includes(input) || name.toLowerCase().includes(input)
 }
+
 const items = alfy
 .matches(input, data, matchFunction)
-.map(({name, blank, source, sample, key}) => ({
+.map(({name, blank, source, sample, key, styles}) => ({
+  uid: key,
 	title: name,
 	autocomplete: input !== key ? key + SPLITTER : key + getSampleText(sample),
 	subtitle: getSubtitle(key),
@@ -51,7 +53,13 @@ const items = alfy
       arg: sample,
       subtitle: 'Show sample',
       quicklookurl: sample,
-    }
+    },
+    ...(styles[0] && {
+      fn: {
+        arg: generateUrl(key) + '.png?style=' + styles[0],
+        subtitle: 'Add style ' + styles[0],
+      }
+    }),
   }
 }));
 

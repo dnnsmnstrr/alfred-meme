@@ -65,6 +65,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>D80BB7C0-49D9-453C-B28C-874533515302</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3E3A61A-5745-4B86-B3CB-93AA48802477</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Dennis Muensterer</string>
@@ -265,6 +278,74 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>A3E3A61A-5745-4B86-B3CB-93AA48802477</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>mock</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Mocking {query}</string>
+				<key>script</key>
+				<string>python mock_text.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Enter text to mock</string>
+				<key>title</key>
+				<string>Mock some text</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D80BB7C0-49D9-453C-B28C-874533515302</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -308,7 +389,10 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Meme Generator
+
+
+'mock' taken from https://github.com/kwaugh/Aflred-Spongebob-Mocking-Text</string>
 	<key>uidata</key>
 	<dict>
 		<key>15BFD0E5-F4E7-4AC8-987B-476FE72A6DCD</key>
@@ -341,6 +425,13 @@
 			<key>ypos</key>
 			<integer>210</integer>
 		</dict>
+		<key>A3E3A61A-5745-4B86-B3CB-93AA48802477</key>
+		<dict>
+			<key>xpos</key>
+			<integer>130</integer>
+			<key>ypos</key>
+			<integer>420</integer>
+		</dict>
 		<key>A943BA70-8393-4311-92A4-81752E49DB25</key>
 		<dict>
 			<key>xpos</key>
@@ -355,6 +446,13 @@
 			<key>ypos</key>
 			<integer>430</integer>
 		</dict>
+		<key>D80BB7C0-49D9-453C-B28C-874533515302</key>
+		<dict>
+			<key>xpos</key>
+			<integer>20</integer>
+			<key>ypos</key>
+			<integer>420</integer>
+		</dict>
 		<key>FB894C5C-26ED-409E-99D7-8FF695AD0EC3</key>
 		<dict>
 			<key>xpos</key>
@@ -363,6 +461,8 @@
 			<integer>140</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string>https://muensterer.xyz</string>
 </dict>
