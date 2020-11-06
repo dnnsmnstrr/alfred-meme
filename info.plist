@@ -10,6 +10,36 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>EFE4046C-367F-4813-B3EA-551599DF227D</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Download image</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>FB894C5C-26ED-409E-99D7-8FF695AD0EC3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>304218ED-9CE5-44CD-BA45-6847B31A9900</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
@@ -18,45 +48,12 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>FB894C5C-26ED-409E-99D7-8FF695AD0EC3</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Paste image link</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
 		</array>
-		<key>8C42AC9C-BFCD-4875-8004-10C30C79D891</key>
+		<key>7E43E3C8-C35D-49A4-B95B-8BE8BDB42FFA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B5772E68-A37B-42DD-A844-C3B383BCB55F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>B5772E68-A37B-42DD-A844-C3B383BCB55F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A943BA70-8393-4311-92A4-81752E49DB25</string>
+				<string>15BFD0E5-F4E7-4AC8-987B-476FE72A6DCD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -104,58 +101,34 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>304218ED-9CE5-44CD-BA45-6847B31A9900</string>
+			<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
+				<key>concurrently</key>
 				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
-				<key>keyword</key>
-				<string>meme</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading meme templates...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<string>query=$1
+
+/usr/local/bin/wget $query.png --directory-prefix=$HOME/Downloads/</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
-				<key>subtext</key>
-				<string>Create meme using memegen.link</string>
-				<key>title</key>
-				<string>Generate meme</string>
 				<key>type</key>
 				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>15BFD0E5-F4E7-4AC8-987B-476FE72A6DCD</string>
+			<string>EFE4046C-367F-4813-B3EA-551599DF227D</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -179,86 +152,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>keyword</key>
-				<string>memes</string>
-				<key>limit</key>
-				<integer>0</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>scopes</key>
-				<array>
-					<string>~/meme</string>
-				</array>
-				<key>sortmode</key>
-				<integer>0</integer>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string></string>
-				<key>types</key>
-				<array/>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
-			<key>uid</key>
-			<string>8C42AC9C-BFCD-4875-8004-10C30C79D891</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -271,28 +164,9 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
+			<string>304218ED-9CE5-44CD-BA45-6847B31A9900</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>A3E3A61A-5745-4B86-B3CB-93AA48802477</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -328,7 +202,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Enter text to mock</string>
+				<string>Update available: 1.0.0 → 1.1.1. Run `npm install -g alfred-meme`</string>
 				<key>title</key>
 				<string>Mock some text</string>
 				<key>type</key>
@@ -346,50 +220,91 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
-				<key>script</key>
-				<string>/usr/local/bin/impbcopy "{query}"</string>
-				<key>scriptargtype</key>
+				<key>keyword</key>
+				<string>meme</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
 				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading meme templates...</string>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>subtext</key>
+				<string>Update available: 1.0.0 → 1.1.1. Run `npm install -g alfred-meme`</string>
+				<key>title</key>
+				<string>Generate meme</string>
 				<key>type</key>
 				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>B5772E68-A37B-42DD-A844-C3B383BCB55F</string>
+			<string>15BFD0E5-F4E7-4AC8-987B-476FE72A6DCD</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>v</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>1048576</integer>
-				<key>overridewithargument</key>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>A943BA70-8393-4311-92A4-81752E49DB25</string>
+			<string>A3E3A61A-5745-4B86-B3CB-93AA48802477</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>meme</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.snippet</string>
+			<key>uid</key>
+			<string>7E43E3C8-C35D-49A4-B95B-8BE8BDB42FFA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Meme Generator
+	<string>Meme Generator - uses memegen.link
 
 
 'mock' taken from https://github.com/kwaugh/Aflred-Spongebob-Mocking-Text</string>
@@ -397,68 +312,79 @@
 	<dict>
 		<key>15BFD0E5-F4E7-4AC8-987B-476FE72A6DCD</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>note</key>
 			<string>alfy</string>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>100</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>305</integer>
 		</dict>
 		<key>304218ED-9CE5-44CD-BA45-6847B31A9900</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>xpos</key>
-			<integer>400</integer>
+			<integer>925</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>150</integer>
 		</dict>
 		<key>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>xpos</key>
-			<integer>400</integer>
+			<integer>720</integer>
 			<key>ypos</key>
-			<integer>265</integer>
+			<integer>70</integer>
 		</dict>
-		<key>8C42AC9C-BFCD-4875-8004-10C30C79D891</key>
+		<key>7E43E3C8-C35D-49A4-B95B-8BE8BDB42FFA</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
 			<key>xpos</key>
-			<integer>15</integer>
+			<integer>25</integer>
 			<key>ypos</key>
-			<integer>210</integer>
+			<integer>475</integer>
 		</dict>
 		<key>A3E3A61A-5745-4B86-B3CB-93AA48802477</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
 			<key>xpos</key>
-			<integer>130</integer>
+			<integer>1165</integer>
 			<key>ypos</key>
-			<integer>420</integer>
-		</dict>
-		<key>A943BA70-8393-4311-92A4-81752E49DB25</key>
-		<dict>
-			<key>xpos</key>
-			<integer>485</integer>
-			<key>ypos</key>
-			<integer>430</integer>
-		</dict>
-		<key>B5772E68-A37B-42DD-A844-C3B383BCB55F</key>
-		<dict>
-			<key>xpos</key>
-			<integer>385</integer>
-			<key>ypos</key>
-			<integer>430</integer>
+			<integer>455</integer>
 		</dict>
 		<key>D80BB7C0-49D9-453C-B28C-874533515302</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
 			<key>xpos</key>
-			<integer>20</integer>
+			<integer>1055</integer>
 			<key>ypos</key>
-			<integer>420</integer>
+			<integer>280</integer>
+		</dict>
+		<key>EFE4046C-367F-4813-B3EA-551599DF227D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>download image</string>
+			<key>xpos</key>
+			<integer>485</integer>
+			<key>ypos</key>
+			<integer>70</integer>
 		</dict>
 		<key>FB894C5C-26ED-409E-99D7-8FF695AD0EC3</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>xpos</key>
-			<integer>400</integer>
+			<integer>260</integer>
 			<key>ypos</key>
-			<integer>140</integer>
+			<integer>120</integer>
 		</dict>
 	</dict>
 	<key>version</key>
