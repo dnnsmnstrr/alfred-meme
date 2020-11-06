@@ -1,7 +1,10 @@
 # alfred-meme [![Build Status](https://travis-ci.org/dnnsmnstrr/alfred-meme.svg?branch=master)](https://travis-ci.org/dnnsmnstrr/alfred-meme)
 
-> Generate memes using Alfred &amp; memegen.link
+> Generate memes using Alfred &amp; [memegen.link](https://memegen.link/)
 
+![memegen.link](https://api.memegen.link/images/drake/Make_meme_with_photoshop/Generate_meme_with_Alfred)
+
+Generated links look like this: `https://api.memegen.link/images/drake/Make_meme_with_photoshop/Generate_meme_with_Alfred`
 
 ## Install
 
@@ -14,7 +17,9 @@ $ npm install --global alfred-meme
 
 ## Usage
 
-In Alfred, type `meme`, <kbd>Enter</kbd>, and your query.
+In Alfred, type `meme`, wait for the templates to load and search for your desired meme.  
+You can preview the image by tapping <kbd>Shift</kbd>.  
+Many templates include sample text, which can be autocompleted using <kbd>Tab</kbd>
 
 
 ## License
