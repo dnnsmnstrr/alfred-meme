@@ -387,6 +387,11 @@
 			<integer>120</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>SPLITTER</key>
+		<string>,</string>
+	</dict>
 	<key>version</key>
 	<string></string>
 	<key>webaddress</key>

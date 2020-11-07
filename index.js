@@ -2,7 +2,8 @@ const alfy = require('alfy');
 const {splitInput, formatText, unformat} = require('./helper');
 
 const BASE_URL = 'https://api.memegen.link/'
-const SPLITTER = ';'
+const {SPLITTER = ';'} = process.env
+
 const maxAge = 7 * 24 * 60 * 60 * 1000 // 1 Week
 const data = await alfy.fetch(BASE_URL + 'templates', {maxAge});
 
