@@ -1,10 +1,10 @@
 # alfred-meme [![Build Status](https://travis-ci.org/dnnsmnstrr/alfred-meme.svg?branch=master)](https://travis-ci.org/dnnsmnstrr/alfred-meme)
 
-> Generate memes using Alfred &amp; [memegen.link](https://memegen.link/)
+> Generate memes using [Alfred](https://www.alfredapp.com) & [memegen.link](https://memegen.link/)
 
-![memegen.link](https://api.memegen.link/images/drake/Make_meme_with_photoshop/Generate_meme_with_Alfred)
+![memegen.link](https://api.memegen.link/images/drake/Make_meme_with_photoshop/Generate_meme_using_Alfred)
 
-Generated links look like this: `https://api.memegen.link/images/drake/Make_meme_with_photoshop/Generate_meme_with_Alfred`
+Generated links look like this: `https://api.memegen.link/images/drake/Make_meme_with_photoshop/Generate_meme_using_Alfred`
 
 ## Install
 
@@ -25,3 +25,5 @@ Many templates include sample text, which can be autocompleted using <kbd>Tab</k
 ## License
 
 MIT © [Dennis Muensterer](https://muensterer.xyz)
+
+Built with [Alfy](https://github.com/sindresorhus/alfy)
