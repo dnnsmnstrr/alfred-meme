@@ -22,15 +22,15 @@ const getSubtitle = (title) => {
   return splitText.reduce(textReducer, '')
 }
 
-const getSampleText = (sample) => {
-  const sampleTexts = sample.split('/').slice(5)
-  let sampleText = ''
+const getSampleText = (example = '') => {
+  const exampleTexts = example.split('/').slice(5)
+  let exampleText = ''
   for (var i = 0; i <= splitText.length; i++) {
-    if (sampleTexts[i]) {
-      sampleText += SPLITTER + unformat(sampleTexts[i].replace('.png', ''));
+    if (exampleTexts[i]) {
+      exampleText += SPLITTER + unformat(exampleTexts[i].replace('.png', ''));
     }
   }
-  return sampleText
+  return exampleText
 }
 
 const matchFunction = ({name, key}, input) => {
@@ -39,10 +39,10 @@ const matchFunction = ({name, key}, input) => {
 
 const items = alfy
 .matches(input, data, matchFunction)
-.map(({name, blank, source, sample, key, styles}) => ({
+.map(({name, blank, source, example, key, styles}) => ({
   uid: key,
 	title: name,
-	autocomplete: input !== key ? key + SPLITTER : key + getSampleText(sample),
+	autocomplete: input !== key ? key + SPLITTER : key + getSampleText(example),
 	subtitle: getSubtitle(key),
 	arg: generateUrl(key),
   mods: {
@@ -51,9 +51,9 @@ const items = alfy
       subtitle: 'Show source',
     },
     ctrl: {
-      arg: sample,
-      subtitle: 'Show sample',
-      quicklookurl: sample,
+      arg: example,
+      subtitle: 'Show example',
+      quicklookurl: example,
     },
     ...(styles[0] && {
       fn: {

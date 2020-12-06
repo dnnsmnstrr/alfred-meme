@@ -13,7 +13,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && ava",
+    "test": "ava",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup",
     "local": "yarn install --ignore-scripts"
