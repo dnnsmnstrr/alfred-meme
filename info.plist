@@ -30,6 +30,41 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>304218ED-9CE5-44CD-BA45-6847B31A9900</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1AEF7ED0-7CDA-4B4C-83E2-5CD5C7C864BB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1AEF7ED0-7CDA-4B4C-83E2-5CD5C7C864BB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3C660327-B52A-4121-ACBE-6B1B69892D96</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>5CB1C473-693F-4C8D-80E4-CCCD5979CF19</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>FB894C5C-26ED-409E-99D7-8FF695AD0EC3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -38,11 +73,14 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>3C660327-B52A-4121-ACBE-6B1B69892D96</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>304218ED-9CE5-44CD-BA45-6847B31A9900</string>
+				<string>FB894C5C-26ED-409E-99D7-8FF695AD0EC3</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -133,6 +171,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node src/custom.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3C660327-B52A-4121-ACBE-6B1B69892D96</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>autopaste</key>
 				<true/>
 				<key>clipboardtext</key>
@@ -165,6 +226,36 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>304218ED-9CE5-44CD-BA45-6847B31A9900</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>custom</string>
+						<key>outputlabel</key>
+						<string>custom</string>
+						<key>uid</key>
+						<string>5CB1C473-693F-4C8D-80E4-CCCD5979CF19</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>1AEF7ED0-7CDA-4B4C-83E2-5CD5C7C864BB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -321,6 +412,13 @@
 			<key>ypos</key>
 			<integer>305</integer>
 		</dict>
+		<key>1AEF7ED0-7CDA-4B4C-83E2-5CD5C7C864BB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>115</integer>
+			<key>ypos</key>
+			<integer>195</integer>
+		</dict>
 		<key>304218ED-9CE5-44CD-BA45-6847B31A9900</key>
 		<dict>
 			<key>colorindex</key>
@@ -329,6 +427,15 @@
 			<integer>925</integer>
 			<key>ypos</key>
 			<integer>150</integer>
+		</dict>
+		<key>3C660327-B52A-4121-ACBE-6B1B69892D96</key>
+		<dict>
+			<key>note</key>
+			<string>handler</string>
+			<key>xpos</key>
+			<integer>185</integer>
+			<key>ypos</key>
+			<integer>110</integer>
 		</dict>
 		<key>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</key>
 		<dict>
@@ -382,9 +489,9 @@
 			<key>colorindex</key>
 			<integer>6</integer>
 			<key>xpos</key>
-			<integer>260</integer>
+			<integer>315</integer>
 			<key>ypos</key>
-			<integer>120</integer>
+			<integer>110</integer>
 		</dict>
 	</dict>
 	<key>variables</key>

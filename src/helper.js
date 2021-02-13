@@ -92,9 +92,20 @@ function splitInput(input = '', splitter = ' ') {
 	return input.split(splitter);
 }
 
+function isValidUrl(string) {
+	let url;
+	try {
+		url = new URL(string);
+	} catch (_) {
+		return false;
+	}
+
+	return true;
+}
 module.exports = {
 	formatText,
 	unformat,
 	escapeSpecialChars,
-	splitInput
+	splitInput,
+	isValidUrl
 };

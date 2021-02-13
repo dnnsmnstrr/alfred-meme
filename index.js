@@ -1,8 +1,6 @@
 const alfy = require('alfy');
-const {splitInput, formatText, unformat} = require('./helper');
-
-const BASE_URL = 'https://api.memegen.link/'
-const {SPLITTER = ';'} = process.env
+const {splitInput, formatText, unformat} = require('./src/helper');
+const {BASE_URL = 'https://api.memegen.link/', SPLITTER} = process.env;
 
 const maxAge = 7 * 24 * 60 * 60 * 1000 // 1 Week
 const data = await alfy.fetch(BASE_URL + 'templates', {maxAge});
@@ -33,18 +31,21 @@ const getSampleText = (example = '') => {
   return exampleText
 }
 
-const matchFunction = ({name, key}, input) => {
-  return key.includes(input) || name.toLowerCase().includes(input)
+const matchFunction = ({name, id}, input) => {
+  if (!id) {
+    return
+  }
+  return id.includes(input) || name.toLowerCase().includes(input)
 }
 
 const items = alfy
 .matches(input, data, matchFunction)
-.map(({name, blank, source, example, key, styles}) => ({
-  uid: key,
+.map(({name, blank, source, example, id, styles}) => ({
+  uid: id,
 	title: name,
-	autocomplete: input !== key ? key + SPLITTER : key + getSampleText(example),
-	subtitle: getSubtitle(key),
-	arg: generateUrl(key),
+	autocomplete: input !== id ? id + SPLITTER : id + getSampleText(example),
+	subtitle: getSubtitle(id),
+	arg: generateUrl(id),
   mods: {
     alt: {
       arg: source,
@@ -57,11 +58,17 @@ const items = alfy
     },
     ...(styles[0] && {
       fn: {
-        arg: generateUrl(key) + '.png?style=' + styles[0],
+        arg: generateUrl(id) + '.png?style=' + styles[0],
         subtitle: 'Add style ' + styles[0],
       }
     }),
   }
 }));
 
-alfy.output(items);
+const custom = {
+  title: 'Custom Meme',
+  subtitle: 'Create custom meme with image url from clipboard',
+  arg: alfy.input
+}
+
+alfy.output([...items, custom]);

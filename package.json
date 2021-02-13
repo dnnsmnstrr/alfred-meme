@@ -29,7 +29,8 @@
     "alfy"
   ],
   "dependencies": {
-    "alfy": "^0.10.0"
+    "alfy": "^0.10.0",
+    "clipboardy": "^2.3.0"
   },
   "devDependencies": {
     "alfy-test": "^0.3.0",
