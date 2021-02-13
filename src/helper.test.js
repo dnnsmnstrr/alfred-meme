@@ -1,5 +1,5 @@
 import test from 'ava';
-import {formatText, escapeSpecialChars, splitInput} from './helper';
+import {formatText, escapeSpecialChars, splitInput, isValidUrl} from './helper';
 
 test('should correctly escape special characters', t => {
 	const specialChars = [' ', '_', '-', '?', '%', '#', '/', '"'];
@@ -13,3 +13,9 @@ test('should format text inputs', t => {
 	let formatted = formatText(splitText);
 	t.is(formatted, '/is_this/a_crappy_meme~q');
 });
+
+test('should validate urls', t => {
+	const url = 'https://i.imgur.com/kFVQ2Ce.jpg';
+	t.is(isValidUrl(url), true);
+});
+

@@ -68,7 +68,8 @@ const items = alfy
 const custom = {
   title: 'Custom Meme',
   subtitle: 'Create custom meme with image url from clipboard',
-  arg: alfy.input
+  arg: alfy.input,
+  autocomplete: 'custom;'
 }
 
 alfy.output([...items, custom]);

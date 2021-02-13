@@ -1,32 +1,38 @@
 const got = require('got');
 const clipboardy = require('clipboardy');
-const {splitInput, formatText} = require('./helper');
+const {splitInput, escapeSpecialChars, isValidUrl} = require('./helper');
 
-const query = process.argv[2]; // query
-const {BASE_URL} = process.env; // environment variables
+const {BASE_URL = 'https://api.memegen.link/', SPLITTER = ';'} = process.env;
+const [command, ...text] = splitInput(process.argv[2], SPLITTER); // query
 
 (async () => {
 	try {
 		const clipboardContent = clipboardy.readSync();
-		if (isVal) {
 
+		if (isValidUrl(clipboardContent)) {
+			const text_lines = text.map(escapeSpecialChars);
+			const body = JSON.stringify({
+				image_url: clipboardContent,
+				text_lines,
+				extension: 'png',
+				redirect: false
+			});
+
+			const res = await got(BASE_URL + 'templates/custom', {
+				method: 'POST',
+				body,
+				headers: {
+					accept: 'application/json',
+					'Content-Type': 'application/json'
+				}
+			});
+			console.log(JSON.parse(res.body.replace(/__/g, '_')).url);
+			return;
 		}
-		await got(BASE_URL + '/templates/custom', {
-    	method: 'POST',
-			body: {
-				image_url: 'https://profile-images.xing.com/images/060e4819a7a8b9c684e98a61751b84d7-3/sarah-niedrich.256x256.jpg',
-				text_lines: [
-					'', 'lol'
-				],
-				extension: 'string',
-				redirect: true
-			},
-    	headers: {
-    		accept: 'application/json',
-    		'Content-Type': 'application/json'
-    	}
-  	});
-	} catch (error) {
+		console.log('no valid url');
+		return;
+	} catch (err) {
 		console.log('err', err);
+		return;
 	}
 })();
