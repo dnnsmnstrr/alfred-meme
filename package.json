@@ -1,6 +1,6 @@
 {
   "name": "alfred-meme",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Generate memes using Alfred &amp; memegen.link",
   "license": "MIT",
   "repository": "dnnsmnstrr/alfred-meme",
