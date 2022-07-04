@@ -10,21 +10,21 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>EFE4046C-367F-4813-B3EA-551599DF227D</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Download image</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -127,25 +127,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string></string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -167,6 +148,25 @@
 			<string>EFE4046C-367F-4813-B3EA-551599DF227D</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -415,9 +415,9 @@
 		<key>1AEF7ED0-7CDA-4B4C-83E2-5CD5C7C864BB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>115</integer>
+			<integer>170</integer>
 			<key>ypos</key>
-			<integer>195</integer>
+			<integer>180</integer>
 		</dict>
 		<key>304218ED-9CE5-44CD-BA45-6847B31A9900</key>
 		<dict>
@@ -433,18 +433,18 @@
 			<key>note</key>
 			<string>handler</string>
 			<key>xpos</key>
-			<integer>185</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>110</integer>
+			<integer>95</integer>
 		</dict>
 		<key>6E9EC260-0350-4BF5-ABDA-ACEEB666C9DB</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>720</integer>
+			<integer>745</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>80</integer>
 		</dict>
 		<key>7E43E3C8-C35D-49A4-B95B-8BE8BDB42FFA</key>
 		<dict>
@@ -480,18 +480,18 @@
 			<key>note</key>
 			<string>download image</string>
 			<key>xpos</key>
-			<integer>485</integer>
+			<integer>545</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>55</integer>
 		</dict>
 		<key>FB894C5C-26ED-409E-99D7-8FF695AD0EC3</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>6</integer>
 			<key>xpos</key>
-			<integer>315</integer>
+			<integer>370</integer>
 			<key>ypos</key>
-			<integer>110</integer>
+			<integer>95</integer>
 		</dict>
 	</dict>
 	<key>variables</key>

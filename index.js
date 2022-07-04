@@ -3,7 +3,7 @@ const {splitInput, formatText, unformat} = require('./src/helper');
 const {BASE_URL = 'https://api.memegen.link/', SPLITTER} = process.env;
 
 const maxAge = 7 * 24 * 60 * 60 * 1000 // 1 Week
-const data = await alfy.fetch(BASE_URL + 'templates', {maxAge});
+const data = await alfy.fetch(BASE_URL + 'templates', { maxAge });
 
 const [input, ...splitText] = splitInput(alfy.input, SPLITTER)
 
@@ -11,8 +11,8 @@ const generateUrl = (key) => {
   return BASE_URL + `images/${key}${formatText(splitText)}`
 }
 
-const textReducer = (previous, current, index) => {
-  return `${previous}${current ? (index + 1) + ': ' + current + ', ' : ''}`
+const textReducer = (previous, current, index, items) => {
+  return `${previous}${current ? `${index + 1}: "${current}"${index < items.length - 1 ? ', ': ''}` : ''}`
 }
 
 const getSubtitle = (title) => {
@@ -21,11 +21,10 @@ const getSubtitle = (title) => {
 }
 
 const getSampleText = (example = '') => {
-  const exampleTexts = example.split('/').slice(5)
   let exampleText = ''
   for (var i = 0; i <= splitText.length; i++) {
-    if (exampleTexts[i]) {
-      exampleText += SPLITTER + unformat(exampleTexts[i].replace('.png', ''));
+    if (example[i]) {
+      exampleText += SPLITTER + unformat(example[i].replace('.png', ''));
     }
   }
   return exampleText
@@ -43,8 +42,8 @@ const items = alfy
 .map(({name, blank, source, example, id, styles}) => ({
   uid: id,
 	title: name,
-	autocomplete: input !== id ? id + SPLITTER : id + getSampleText(example),
-	subtitle: getSubtitle(id),
+	autocomplete: input !== id ? id + SPLITTER : id + getSampleText(example.text),
+	subtitle: getSubtitle(example.text),
 	arg: generateUrl(id),
   mods: {
     alt: {
